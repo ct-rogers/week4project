@@ -1,6 +1,9 @@
+let playerBox = document.getElementById('player')
 let searchBox = document.getElementById('searchBox')
 let searchResults = document.getElementById('searchResults')
 let searchTerm = ''
+let list = document.getElementById('list')
+let musicPlayer = document.getElementById('audioPlayer')
 
 let searchBar = document.getElementById('searchBar')
 let button = document.getElementById('button')
@@ -18,6 +21,10 @@ button.addEventListener('click', function() {
       img.src = song.artworkUrl100
       songInfo.appendChild(img)
 
+      img.addEventListener('click', function playMusic() {
+        musicPlayer.setAttribute('src', song.previewUrl)
+      })
+
       let songTitle = document.createElement('p')
       songTitle.textContent = song.trackName
       songInfo.appendChild(songTitle)
@@ -28,10 +35,9 @@ button.addEventListener('click', function() {
 
       let audio = document.createElement('a')
       audio.href = song.previewUrl
-      songInfo.appendChild(audio)
+      audio.textContent = song.previewUrl
 
-      searchResults.appendChild(songInfo)
-      console.log(audio)
+      list.appendChild(songInfo)
     })
   })
 })
