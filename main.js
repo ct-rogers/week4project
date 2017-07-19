@@ -10,6 +10,7 @@ let button = document.getElementById('button')
 
 button.addEventListener('click', function() {
   searchTerm = searchBar.value.split(' ').join('+')
+  list.innerHTML = ''
 
   let URL = `https://itunes.apple.com/search?term=${searchTerm}&limit=15`
 
@@ -21,7 +22,7 @@ button.addEventListener('click', function() {
       img.src = song.artworkUrl100
       songInfo.appendChild(img)
 
-      img.addEventListener('click', function playMusic() {
+      songInfo.addEventListener('click', function playMusic() {
         musicPlayer.setAttribute('src', song.previewUrl)
       })
 
@@ -38,6 +39,8 @@ button.addEventListener('click', function() {
       audio.textContent = song.previewUrl
 
       list.appendChild(songInfo)
+
+      searchBar.value = ''
     })
   })
 })
