@@ -1,0 +1,40 @@
+body {
+  margin: .5em 5em;
+  background-image: url(iTunesBackground.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+audio {
+  width: 100%;
+}
+
+input {
+  border-radius: .2em;
+  width: 85%;
+  height: 2em;
+  font-size: 20px;
+  margin-left: -1em;
+}
+
+button {
+  border-radius: .5em;
+  width: 10em;
+  height: 3em;
+  margin-left: 2.5em;
+}
+
+hr {
+  margin: 2em 0;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
